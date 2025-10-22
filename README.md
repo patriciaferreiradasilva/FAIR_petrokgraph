@@ -23,6 +23,6 @@ ANP does not endorse any analysis or conclusions presented here.
 
 ## Source & License
 - **Original data**: ANP, the Brazilian National Agency for Petroleum, Natural Gas and Biofuels (public domain).
-- **This repo (cleaned CSV, RDF, SHACL/metadata, docs)**: **CC0 1.0 Public Domain Dedication** — see [LICENSE](./LICENSE).
+<a href="https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main">FAIR petrokgraph</a> © 2025 by <a href="https://creativecommons.org">Patricia Ferreira da Silva</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 
 Please cite as: “tabela de pocos ANP, from Brazilian National Agency for Petroleum, Natural Gas and Biofuels, in public domain, accessed 19-09-2025; cleaned and republished by <Patricia Ferreira da Silva/ University of Twente>.”
