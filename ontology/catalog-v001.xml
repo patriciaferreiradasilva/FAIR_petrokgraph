@@ -2,6 +2,6 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl" uri="file:/C:/Users/bg40/GeoCoreOntology/geocore.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1761059164685" name="http://www.example.org/petrokgraph" uri="petrokgraph.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1761210080170" name="https://github.com/patriciaferreiradasilva/w3id.org/blob/master/FAIR_petrokgraph/ontology/petrokgraph.owx" uri="petrokgraph.owx"/>
     </group>
 </catalog>

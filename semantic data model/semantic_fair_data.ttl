@@ -13,7 +13,7 @@
 @prefix sosa:      <http://www.w3.org/ns/sosa/> .
 @prefix wd:        <http://www.wikidata.org/entity/> .
 @prefix obo:       <http://purl.obolibrary.org/obo/> .
-@prefix pkg:       <http://www.example.org/petrokgraph/> .
+@prefix pkg:       <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#> .
 
 
 :WellShape
