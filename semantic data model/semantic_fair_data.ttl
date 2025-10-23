@@ -1,4 +1,5 @@
-@prefix :          <http://fairdatapoint.org/> .
+#@prefix :          <http://fairdatapoint.org/> .
+@prefix:           <http://localhost> .
 @prefix :          <https://w3id.org/FAIR-course-UT/2025/group19/data#> .
 @prefix sh:        <http://www.w3.org/ns/shacl#> .
 @prefix osdu:      <https://community.opengroup.org/osdu/data/data-definitions/-/blob/master/E-R/master-data/> .
