@@ -6,5 +6,31 @@
 # GitHub username: patriciaferreiradasilva
 
 
-RewriteEngine on
-RewriteRule ^FAIR-course-UT/2025/group19/FAIR_project/?(.*)$ https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/$1 [R=302,R]
+Redirect 301 /FAIR-course-UT/2025/group19/ https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main
+
+# data folder
+Redirect 301 /FAIR-course-UT/2025/group19/data https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/data
+
+# metadata folder
+Redirect 301 /FAIR-course-UT/2025/group19/metadata https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/metadata
+
+# data model folder
+Redirect 301 /FAIR-course-UT/2025/group19/semantic%20data%20model https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/semantic%20data%20model
+
+# metadata model folder
+Redirect 301 /FAIR-course-UT/2025/group19/semantic%20metadata%20model https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/semantic%20metadata%20model
+
+# fdp metadata
+Redirect 301 /FAIR-course-UT/2025/group19/metadata/metadata.ttl https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/metadata/metadata.ttl
+
+#ontology folder
+Redirect 301 /FAIR-course-UT/2025/group19/ontology https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/ontology
+
+#ontology
+Redirect 301 /FAIR-course-UT/2025/group19/ontology/petrokgraph.owx https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx
+
+# CSV distribution
+Redirect 301 /FAIR-course-UT/2025/group19/data/Tabela_pocos_2025_Setembro_19.csv https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/blob/main/data/Tabela_pocos_2025_Setembro_19.csv
+
+# Turtle distribution
+Redirect 301 /FAIR-course-UT/2025/group19/data/data.ttl https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/data.ttl
