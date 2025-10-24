@@ -1,0 +1,10 @@
+[INFO ] 2025-10-23 16:36:49,234 [import-task-fdp-1 | c.o.t.m.MonitorRepositoryConnection] Parallel mode requested but it is disabled globally. Using serial mode instead.
+[INFO ] 2025-10-23 19:35:30,968 [repositories/fdp | c.o.t.m.MonitorRepositoryConnection] Incoming update: PREFIX dc: <http://purl.org/dc/elements/1.1/>
+INSERT DATA
+      {
+      GRAPH <http://example> {
+          <http://example/book1> dc:title "A new book" ;
+                                 dc:creator "A.N.Other" .
+          }
+      }
+[INFO ] 2025-10-23 19:38:08,016 [repositories/fdp | c.o.t.m.MonitorRepositoryConnection] Incoming update: CLEAR GRAPH <http://example>
