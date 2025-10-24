@@ -3,6 +3,6 @@
     <uri id="Imports Wizard Entry" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl" uri="file:/C:/Users/Patricia/GeoCoreOntology/geocore.owl"/>
     <uri id="User Entered Import Resolution" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore.owl" uri="file:/C:/Users/bg40/GeoCoreOntology/geocore.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1761228845190" name="https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#" uri="petrokgraph.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1761291741477" name="https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#" uri="petrokgraph.owx"/>
     </group>
 </catalog>
