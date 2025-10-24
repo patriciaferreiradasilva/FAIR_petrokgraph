@@ -27,7 +27,7 @@ Redirect 301 /FAIR-course-UT/2025/group19/metadata/metadata.ttl https://raw.gith
 Redirect 301 /FAIR-course-UT/2025/group19/ontology https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/ontology
 
 #ontology
-Redirect 301 /FAIR-course-UT/2025/group19/ontology/petrokgraph.owx https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx
+Redirect 301 /FAIR-course-UT/2025/group19/ontology/petrokgraph.owx# https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#
 
 # CSV distribution
 Redirect 301 /FAIR-course-UT/2025/group19/data/Tabela_pocos_2025_Setembro_19.csv https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/blob/main/data/Tabela_pocos_2025_Setembro_19.csv
