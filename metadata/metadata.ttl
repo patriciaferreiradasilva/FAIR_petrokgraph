@@ -1,0 +1,395 @@
+@prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
+@prefix : <http://localhost/> .
+@prefix schema: <http://schema.org/> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix array: <http://www.w3.org/2005/xpath-functions/array> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix apf: <http://jena.apache.org/ARQ/property#> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix map: <http://www.w3.org/2005/xpath-functions/map> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix adms: <http://www.w3.org/ns/adms/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix list: <http://jena.apache.org/ARQ/list#> .
+@prefix fdp: <https://w3id.org/fdp/fdp-o#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ofn: <http://www.ontotext.com/sparql/functions/> .
+@prefix geoext: <http://rdf.useekm.com/ext#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix math: <http://www.w3.org/2005/xpath-functions/math> .
+@prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://localhost:8080> a dcat:DataService, dcat:Resource, fdp:FAIRDataPoint, fdp:MetadataService;
+  fdp:startDate "2025-10-23T00:00:00"^^xsd:dateTime;
+  fdp:uiLanguage <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  fdp:metadataIdentifier <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/metadata/metadata_fair_data.ttl>;
+  dct:title "Local FAIR Data Point.";
+  dct:description "This Local FAIR Data Point deployment is set as Group 19's deliverable for the 2025 FAIR Data Engineering course at University of Twente. This dataset, in Linked Data Format, represents wells from Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory. It contains basic information about well perforation (start and finish days and the operator, when available), and geographic/geological information on the wells. ";
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:hasVersion "1.0";
+  <http://localhost/catalog/> _:node1;
+  :WellsDataset _:node3;
+  :WellsDistribution _:node5 .
+
+<http://localhost/catalog/> a ldp:DirectContainer;
+  dct:title "Catalogs";
+  ldp:hasMemberRelation fdp:metadataCatalog;
+  ldp:membershipResource <http://localhost>;
+  ldp:contains <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2> .
+
+_:node1 a dcat:Catalog, ldp:DirectContainer;
+  dct:title "Wells Catalog";
+  ldp:hasMemberRelation fdp:metadataCatalog;
+  ldp:membershipResource <http://localhost>;
+  dct:issued "2025-10-23T00:00:00"^^xsd:dateTime;
+  dct:publisher _:node2 .
+
+<http://localhost> a dcat:DataService, dcat:Resource, fdp:FAIRDataPoint, fdp:MetadataService;
+  rdfs:label "Local FAIR Data Point for ANP Wells";
+  fdp:uiLanguage <http://id.loc.gov/vocabulary/iso639-1/en>;
+  fdp:metadataIdentifier <http://localhost#identifier>;
+  dct:title "Local FAIR Data Point for ANP Wells";
+  dct:description "This Local FAIR Data Point deployment is set as Group 19's deliverable for the 2025 FAIR Data Engineering course at University of Twente. This dataset, in Linked Data Format, represents wells from Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory. It contains basic information about well perforation (start and finish days and the operator, when available), and geographic/geological information on the wells.";
+  dct:conformsTo <http://localhost/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c>;
+  dct:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0>;
+  dct:hasVersion "1.0";
+  fdp:metadataCatalog <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2>;
+  dct:publisher <http://localhost#publisher>;
+  fdp:metadataIssued "2025-10-23T16:40:33.227260131Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-24T10:28:33.264085177Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <http://www.re3data.org/schema/3-0#repositoryIdentifier> <http://localhost#identifier>;
+  dct:accessRights <http://localhost#accessRights>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:endpointURL <http://localhost>;
+  fdp:fdpSoftwareVersion "FDP:v1.16.2~51911d6" .
+
+_:node2 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+_:node3 a dcat:Dataset;
+  dct:title "FAIR Petro KGraph.";
+  dct:description "Wells from Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory, with geographic and geological information.";
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:issued "2025-10-21T08:23:00-03:00"^^xsd:dateTime;
+  dct:publisher _:node4;
+  dct:modified "2025-10-23T00:00:00"^^xsd:dateTime;
+  dct:creator <https://https://github.com/patriciaferreiradasilva>;
+  prov:wasDerivedFrom <https://https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/tree/main/data/Tabela_pocos_2025_Setembro_19.csv>;
+  dcat:theme <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#>;
+  dcat:landingPage <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/fair_data.ttl> .
+
+_:node4 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+_:node5 a dcat:Distribution;
+  dct:description "RDF Turtle file representing well entries according to Petro KGraph Ontology.";
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dcat:accessURL <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/fair_data.ttl>;
+  dcat:format "CSV";
+  dcat:mediaType "text/turtle" .
+
+<http://localhost#identifier> a <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost" .
+
+<http://localhost#accessRights> a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+<http://localhost#publisher> a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+<http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2> a dcat:Resource, dcat:Catalog;
+  rdfs:label "ANP Wells Catalog";
+  fdp:metadataIdentifier <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2#identifier>;
+  dct:title "ANP Wells Catalog";
+  dct:description "Catalog containing distributions for original dataset, issued by Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP in csv format, and for its FAIRified version. ";
+  dct:conformsTo <http://localhost/profile/a0949e72-4466-4d53-8900-9436d1049a4b>;
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:hasVersion "1.0";
+  dct:issued "2025-10-23T16:43:56.555016657Z"^^xsd:dateTime;
+  dct:publisher _:4c7cc93295414fa8b69b5dc7cdd4de1b422;
+  dct:modified "2025-10-24T10:28:31.956638264Z"^^xsd:dateTime;
+  fdp:metadataIssued "2025-10-23T16:43:56.555016657Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-24T10:28:31.956638264Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2#accessRights>;
+  dct:isPartOf <http://localhost>;
+  foaf:homePage :catalog;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:dataset <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973>, <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c> .
+
+<http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2#identifier> a <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2" .
+
+<http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2#accessRights> a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+<http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973> a dcat:Resource, dcat:Dataset;
+  rdfs:label "FAIR Dataset ANP Wells";
+  fdp:metadataIdentifier <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973#identifier>;
+  dct:title "FAIR Dataset ANP Wells";
+  dct:description "Dataset for the FAIRified version of main informations provided by _tabela de poços_, the table of detailed well information in Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory. The FAIR dataset contains information on well perforation (start and end dates and the operator, when available), geographic coordinates of well heads, and relevant geological information on the wellbore. The data is conformant to the open version of Petro KGraph, an ontology representing main domain entities and its relations.";
+  dct:conformsTo <http://localhost/profile/2f08228e-1789-40f8-84cd-28e3288c3604>;
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:hasVersion "1.0.0";
+  dct:issued "2025-10-23T03:00:00Z"^^xsd:dateTime;
+  dct:publisher _:4c7cc93295414fa8b69b5dc7cdd4de1b335;
+  dct:modified "2025-10-23T03:00:00Z"^^xsd:dateTime;
+  dcat:theme <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#>;
+  dcat:landingPage <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/fair_data.ttl>;
+  fdp:metadataIssued "2025-10-23T18:36:39.890375887Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-24T10:28:11.959710862Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973#accessRights>;
+  dct:isPartOf <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:contactPoint <https://github.com/patriciaferreiradasilva>;
+  dcat:distribution <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3> .
+
+<http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973#identifier> a <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973" .
+
+<http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973#accessRights> a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+<http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3> a dcat:Resource,
+    dcat:Distribution;
+  rdfs:label "ANP well table converted fo Linked Data format";
+  fdp:metadataIdentifier <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3#identifier>;
+  dct:title "ANP well table converted fo Linked Data format";
+  dct:description "RDF Turtle file representing main information related to ANP well table entries according to Petro KGraph Ontology.";
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:hasVersion "1.0.0";
+  dct:issued "2025-10-21T03:00:00Z"^^xsd:dateTime;
+  dct:publisher _:59001303dd4541aaacca77994fb4e69e302;
+  dct:modified "2025-10-23T03:00:00Z"^^xsd:dateTime;
+  dcat:accessURL <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/fair_data.ttl>;
+  dcat:format "ttl";
+  dcat:mediaType "text/turtle";
+  fdp:metadataIssued "2025-10-23T18:46:50.231366907Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-23T18:46:50.231366907Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3#accessRights>;
+  dct:isPartOf <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:byteSize "29593600";
+  dcat:downloadURL <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/data/fair_data.ttl> .
+
+_:59001303dd4541aaacca77994fb4e69e302 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+<http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3" .
+
+<http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3#accessRights>
+  a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+<http://localhost/distribution/> a ldp:DirectContainer, ldp:DirectContainer;
+  dct:title "Distributions", "Distributions";
+  ldp:hasMemberRelation dcat:distribution, dcat:distribution;
+  ldp:membershipResource <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973>,
+    <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c>;
+  ldp:contains <http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3>,
+    <http://localhost/distribution/2113142a-78fb-4a01-9c33-d0822ed6d3ae>, <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644> .
+
+<http://localhost/dataset/> a ldp:DirectContainer;
+  dct:title "Datasets";
+  ldp:hasMemberRelation dcat:dataset;
+  ldp:membershipResource <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2>;
+  ldp:contains <http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973>, <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c> .
+
+<http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c> a dcat:Resource, dcat:Dataset;
+  rdfs:label "Original Dataset of ANP Wells";
+  fdp:metadataIdentifier <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c#identifier>;
+  dct:title "Original Dataset of ANP Wells";
+  dct:description "Detailed information about the wells registered in Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory.";
+  dct:conformsTo <http://localhost/profile/2f08228e-1789-40f8-84cd-28e3288c3604>;
+  dct:license <https://creativecommons.org/licenses/by/4.0/>;
+  dct:hasVersion "1.0";
+  dct:issued "2025-09-19T03:00:00Z"^^xsd:dateTime;
+  dct:publisher _:59001303dd4541aaacca77994fb4e69e1821;
+  dcat:theme <https://raw.githubusercontent.com/patriciaferreiradasilva/FAIR_petrokgraph/refs/heads/main/ontology/petrokgraph.owx#>;
+  dcat:landingPage <https://cdp.anp.gov.br/ords/r/cdp_apex/consulta-dados-publicos-cdp/consulta-de-po%2525C3%2525A7os>;
+  fdp:metadataIssued "2025-10-23T19:16:41.236784838Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-24T10:22:06.918566628Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c#accessRights>;
+  dct:isPartOf <http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:contactPoint <https://gov.br/anp>;
+  dcat:distribution <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644>,
+    <http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea> .
+
+<http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c#identifier> a <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c" .
+
+<http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c#accessRights> a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+<http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644> a dcat:Resource,
+    dcat:Distribution;
+  rdfs:label "Tabela de poços ANP";
+  fdp:metadataIdentifier <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644#identifier>;
+  dct:title "Tabela de poços ANP";
+  dct:description "CSV file containing ANP well table, a table with detailed information of wells from Brazilian National Agency for Petroleum, Natural Gas and Biofuels - ANP inventory.";
+  dct:conformsTo <http://localhost/profile/02c649de-c579-43bb-b470-306abdc808c7>;
+  dct:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0>;
+  dct:hasVersion "1.0";
+  dct:publisher _:4c7cc93295414fa8b69b5dc7cdd4de1b166;
+  dcat:accessURL <https://dados.gov.br/dados/conjuntos-dados/acervo-de-dados-tecnicos>;
+  dcat:format "csv";
+  dcat:mediaType "text/csv";
+  fdp:metadataIssued "2025-10-23T19:21:35.802346669Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-24T10:22:05.365117605Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644#accessRights>;
+  dct:isPartOf <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:downloadURL <https://cdp.anp.gov.br/ords/r/cdp_apex/consulta-dados-publicos-cdp/consulta-de-po%2525252525C3%2525252525A7os> .
+
+<http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644" .
+
+<http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644#accessRights>
+  a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+_:59001303dd4541aaacca77994fb4e69e1821 a foaf:Agent;
+  foaf:name "Portal Brasileiro de Dados Abertos" .
+
+<http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea> a dcat:Resource,
+    dcat:Distribution;
+  rdfs:label "(Sample) Original Well Dataset";
+  fdp:metadataIdentifier <http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea#identifier>;
+  dct:title "(Sample) Original Well Dataset";
+  dct:description "Sample of the original Well dataset.";
+  dct:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0>;
+  dct:hasVersion "1.0";
+  dct:issued "2025-09-19T03:00:00Z"^^xsd:dateTime;
+  dct:publisher _:59001303dd4541aaacca77994fb4e69e2070;
+  dct:modified "2025-10-23T03:00:00Z"^^xsd:dateTime;
+  dcat:accessURL <https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/blob/main/data/Tabela_pocos_2025_Setembro_19.csv>;
+  dcat:format "csv";
+  dcat:mediaType "text/csv";
+  fdp:metadataIssued "2025-10-23T19:29:24.199677506Z"^^xsd:dateTime;
+  fdp:metadataModified "2025-10-23T19:29:24.199677506Z"^^xsd:dateTime;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/pt>;
+  dct:accessRights <http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea#accessRights>;
+  dct:isPartOf <http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:byteSize "11592";
+  dcat:downloadURL <https://github.com/patriciaferreiradasilva/FAIR_petrokgraph/blob/main/data/Tabela_pocos_2025_Setembro_19.csv> .
+
+_:59001303dd4541aaacca77994fb4e69e2070 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+<http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dct:identifier "http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea" .
+
+<http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea#accessRights>
+  a dct:RightsStatement;
+  dct:description "This resource has no access restriction" .
+
+_:4c7cc93295414fa8b69b5dc7cdd4de1b166 a foaf:Agent;
+  foaf:name "Portal Brasileiro de Dados Abertos" .
+
+_:4c7cc93295414fa8b69b5dc7cdd4de1b335 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+_:4c7cc93295414fa8b69b5dc7cdd4de1b422 a foaf:Agent;
+  foaf:name "Patricia Ferreira da Silva (FAIR Course UT 2025 - Group 19)" .
+
+<http://localhost/profile/2f08228e-1789-40f8-84cd-28e3288c3604> rdfs:label "Dataset Profile",
+    "Dataset Profile" .
+
+<http://localhost/profile/77aaad6a-0136-4c6e-88b9-07ffccd0ee4c> rdfs:label "FAIR Data Point Profile" .
+
+<http://localhost/profile/a0949e72-4466-4d53-8900-9436d1049a4b> rdfs:label "Catalog Profile" .
+
+<http://localhost/profile/02c649de-c579-43bb-b470-306abdc808c7> rdfs:label "Distribution Profile" .
+
+<http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/catalog/f348e282-e9b5-4903-a631-06aae82d8da2/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/dataset/f945c3a4-c6db-4079-8674-477577cc8973/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/distribution/aef1b844-8edd-41dc-9f5d-51de7d2348b3/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/metrics/445c0a70d1e214e545b261559e2842f4> <http://semanticscience.org/resource/SIO_000628>
+    <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/metrics/5d27e854a9e78eb3f663331cd47cdc13> <http://semanticscience.org/resource/SIO_000628>
+    <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/dataset/77ff1272-5fe9-456f-9454-7263a2b90e7c/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/distribution/4df9f048-fdc8-4a8e-9a8a-17209fd5e644/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
+
+<http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost/distribution/e5e9592a-684c-462b-8507-0b4dadabacea/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
